@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Typestack Validator Storybook",
+    "version": "1.0",
+    "description": "The TypeStack Validator Chrome Extension is a powerful tool for web developers that integrates seamlessly. This extension enhances your web development workflow by providing real-time validation and analysis of your Font-Size, Font-Weight, Line-Height directly within the Chrome browser.",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      }
+    },
+    "icons": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "js": ["contentscript.js"],
+        "type": "module" 
+      }]
+  }
+  
