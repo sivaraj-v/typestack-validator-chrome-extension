@@ -52,7 +52,7 @@ const typestack = {
         fontSize: "16px",
         fontWeight: "400",
         lineHeight: "24px",
-        textDecoration : "none solid rgb(26, 26, 26)"
+        textDecoration : "none solid rgb(77, 77, 77)"
     },
     "tr-Typestack--p1Link": {
         fontSize: "16px",
