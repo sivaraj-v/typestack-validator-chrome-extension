@@ -124,25 +124,25 @@ const typestack = {
         fontSize: "19px",
         fontWeight: "400",
         lineHeight: "20px",
-        textDecoration : "none solid rgb(77, 77, 77)"
+        textDecoration : "none solid rgb(255, 255, 255)"
     },
     "tr-Typestack--navSemibold": {
         fontSize: "19px",
         fontWeight: "500",
         lineHeight: "20px",
-        textDecoration : "none solid rgb(77, 77, 77)"
+        textDecoration : "none solid rgb(255, 255, 255)"
     },
     "tr-Typestack--navRegularSmall": {
         fontSize: "15px",
         fontWeight: "400",
         lineHeight: "24px",
-        textDecoration : "none solid rgb(77, 77, 77)"
+        textDecoration : "none solid rgb(0, 30, 255)"
     },
     "tr-Typestack--navSemiboldSmall": {
         fontSize: "15px",
         fontWeight: "600",
         lineHeight: "24px",
-        textDecoration : "none solid rgb(77, 77, 77)"
+        textDecoration : "none solid rgb(255, 255, 255)"
     },
 };
 const display = {
@@ -166,6 +166,7 @@ const display = {
     "tr-Typestack--quoteLarge": "Quote Large",
     "tr-Typestack--quoteSmall": "Quote Small",
     "tr-Typestack--navRegular" : "Nav Regular",
+    "tr-Typestack-navSemibold" : "Nav Semi Bold",
     "tr-Typestack--navRegularSmall" : "Nav Regular Small",
     "tr-Typestack--navSemiboldSmall" : "Nav Semi Bold Small"
   };
@@ -218,7 +219,15 @@ if (iframe) {
 				}
 				
 				const classListArray = Array.from(element.classList);
+               
   				const filteredClassNames = typestackKeys.filter(className => classListArray.includes(className));
+
+                // if(filteredClassNames.toString() == "tr-Typestack--navRegularSmall"){
+                //     debugger
+                //     filteredStyles
+                //     console.log(typestack[filteredClassNames.toString()])
+                // }
+                  
 				const areEqual = compareObjects(filteredStyles, typestack[filteredClassNames.toString()]);
 	
 				if (areEqual) {
