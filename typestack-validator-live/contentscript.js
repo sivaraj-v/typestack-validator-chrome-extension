@@ -54,12 +54,6 @@ const typestack = {
         lineHeight: "24px",
         textDecoration : "none solid rgb(77, 77, 77)"
     },
-    "tr-Typestack--p1": {
-        fontSize: "16px",
-        fontWeight: "400",
-        lineHeight: "24px",
-        textDecoration : "none solid rgb(77, 77, 77)"
-    },
     "tr-Typestack--p1Link": {
         fontSize: "16px",
         fontWeight: "400",
@@ -107,6 +101,24 @@ const typestack = {
         fontWeight: "700",
         lineHeight: "16px",
         textDecoration : "none solid rgb(77, 77, 77)"
+    },
+    "tr-Typestack--buttonBold": {
+        fontSize: "20px",
+        fontWeight: "700",
+        lineHeight: "28px",
+        textDecoration : "none solid rgb(77, 77, 77)"
+    },
+    "tr-Typestack--quoteLarge": {
+        fontSize: "32px",
+        fontWeight: "300",
+        lineHeight: "48px",
+        textDecoration : "none solid rgb(77, 77, 77)"
+    },
+    "tr-Typestack--quoteSmall": {
+        fontSize: "19px",
+        fontWeight: "300",
+        lineHeight: "32px",
+        textDecoration : "none solid rgb(77, 77, 77)"
     }
 };
 const display = {
@@ -125,7 +137,10 @@ const display = {
     "tr-Typestack--p2Bold": "P2 Bold",
     "tr-Typestack--p3": "P3",
     "tr-Typestack--p3Link": "P3 Link",
-    "tr-Typestack--p3Bold": "P3 Bold"
+    "tr-Typestack--p3Bold": "P3 Bold",
+    "tr-Typestack--buttonBold": "Button Bold",
+    "tr-Typestack--quoteLarge": "Quote Large",
+    "tr-Typestack--quoteSmall": "Quote Small",
   };
 
 const typestackKeys = Object.keys(typestack);
