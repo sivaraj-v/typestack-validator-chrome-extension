@@ -168,7 +168,9 @@ if (iframe) {
     iframe.addEventListener('load', () => {
         const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
         if (iframeDocument) {
-            const typestackKeys = Object.keys(typestack);
+
+            setTimeout(() => {
+                const typestackKeys = Object.keys(typestack);
             const classNamesWithPeriod = typestackKeys.map(className => `.${className}`);
 			const DOM_Elements_Joined = iframeDocument.querySelectorAll(`${classNamesWithPeriod.join(",")}`);
 
@@ -209,6 +211,11 @@ if (iframe) {
 					console.log('The style and spec objects are different.');
 				}
 			}
+              }, 2000);
+
+              
+              
+            
 
         } else {
             console.log('Could not access the iframe document.');

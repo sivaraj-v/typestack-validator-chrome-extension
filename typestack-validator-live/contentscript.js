@@ -143,9 +143,6 @@ const display = {
     "tr-Typestack--quoteSmall": "Quote Small",
   };
 
-const typestackKeys = Object.keys(typestack);
-const classNamesWithPeriod = typestackKeys.map(className => `.${className}`);
-const DOM_Elements_Joined = document.querySelectorAll(`${classNamesWithPeriod.join(",")}`);
 
 function compareObjects(obj1, obj2) {
 	const keys1 = Object.keys(obj1);
@@ -163,44 +160,46 @@ function compareObjects(obj1, obj2) {
 	return true;
 }
 
-
+setTimeout(() => {
+    const typestackKeys = Object.keys(typestack);
+    const classNamesWithPeriod = typestackKeys.map(className => `.${className}`);
+    const DOM_Elements_Joined = document.querySelectorAll(`${classNamesWithPeriod.join(",")}`);
+    
 for (const element of DOM_Elements_Joined) {
-	// Check if the background color is red
-	const computedStyle = getComputedStyle(element);
-
-	const filteredProperties = [
-		'fontSize',
-		'fontWeight',
-		'lineHeight',
+    const computedStyle = getComputedStyle(element);
+    const filteredProperties = [
+        'fontSize',
+        'fontWeight',
+        'lineHeight',
         "textDecoration"
-	];
+    ];
 
-	const filteredStyles = {};
-	const filteredElements = {};
+    const filteredStyles = {};
+    const filteredElements = {};
 
-	for (const property of filteredProperties) {
-		filteredStyles[property] = computedStyle[property];
-		filteredElements[property] = element.style[property];
-	}
-	
-	const classListArray = Array.from(element.classList);
-    const filteredClassNames = typestackKeys.filter(className => classListArray.includes(className));
+    for (const property of filteredProperties) {
+        filteredStyles[property] = computedStyle[property];
+        filteredElements[property] = element.style[property];
+    }
+    
+    const classListArray = Array.from(element.classList);
+      const filteredClassNames = typestackKeys.filter(className => classListArray.includes(className));
     const areEqual = compareObjects(filteredStyles, typestack[filteredClassNames.toString()]);
 
-	if (areEqual) {
-		const spanElement = document.createElement('span');
+    if (areEqual) {
+        const spanElement = document.createElement('span');
+        spanElement.textContent = display[filteredClassNames.toString()]
+        spanElement.style.backgroundColor = "#003ff4"; 
+        spanElement.style.paddingLeft = "5px";
+        spanElement.style.paddingRight = "5px"; 
+        spanElement.style.display = "inline-block";
+        spanElement.style.color = "white"
+        spanElement.style.marginRight = "2px"
 
-		spanElement.textContent = display[filteredClassNames.toString()]
-		spanElement.style.backgroundColor = "#003ff4"; 
-		spanElement.style.paddingLeft = "5px";
-		spanElement.style.paddingRight = "5px"; 
-		spanElement.style.display = "inline-block";
-		spanElement.style.color = "white"
-		spanElement.style.marginRight = "2px"
 
-
-		element.insertBefore(spanElement, element.firstChild);
-	} else {
-		console.log('The style and spec objects are different.');
-	}
+        element.insertBefore(spanElement, element.firstChild);
+    } else {
+        console.log('The style and spec objects are different.');
+    }
 }
+  }, 2000);
