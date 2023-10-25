@@ -119,7 +119,31 @@ const typestack = {
         fontWeight: "300",
         lineHeight: "32px",
         textDecoration : "none solid rgb(77, 77, 77)"
-    }
+    },
+    "tr-Typestack--navRegular": {
+        fontSize: "19px",
+        fontWeight: "400",
+        lineHeight: "20px",
+        textDecoration : "none solid rgb(77, 77, 77)"
+    },
+    "tr-Typestack--navSemibold": {
+        fontSize: "19px",
+        fontWeight: "500",
+        lineHeight: "20px",
+        textDecoration : "none solid rgb(77, 77, 77)"
+    },
+    "tr-Typestack--navRegularSmall": {
+        fontSize: "15px",
+        fontWeight: "400",
+        lineHeight: "24px",
+        textDecoration : "none solid rgb(77, 77, 77)"
+    },
+    "tr-Typestack--navSemiboldSmall": {
+        fontSize: "15px",
+        fontWeight: "600",
+        lineHeight: "24px",
+        textDecoration : "none solid rgb(77, 77, 77)"
+    },
 };
 const display = {
     "tr-Typestack--h1": "H1",
@@ -141,6 +165,9 @@ const display = {
     "tr-Typestack--buttonBold": "Button Bold",
     "tr-Typestack--quoteLarge": "Quote Large",
     "tr-Typestack--quoteSmall": "Quote Small",
+    "tr-Typestack--navRegular" : "Nav Regular",
+    "tr-Typestack--navRegularSmall" : "Nav Regular Small",
+    "tr-Typestack--navSemiboldSmall" : "Nav Semi Bold Small"
   };
 
 
